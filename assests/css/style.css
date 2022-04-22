@@ -1,0 +1,326 @@
+@import url(variables.css);
+
+.main-bg { 
+    background: #333 url(../img/background.svg) center center;
+    background-size: cover;
+    color: var(--white-color)
+}
+
+.white-bg {
+    background: var(--white-color);
+    color: var(--primary-color)
+}
+
+.main-content {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: var(--gap);
+}
+
+.section {
+    min-height: 100vh;
+
+}
+
+.menu {
+    border-bottom: 0.1rem solid var(--light-gray-color);
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+    width:100%;
+    z-index: 1;
+}
+.menu-content {
+    display:flex;
+    justify-content: space-between;
+    padding-top:0;
+    padding-bottom:0;
+    align-items: center;
+}
+
+.menu ul { 
+    list-style: none;
+    display:flex;
+    
+}
+
+.menu ul li a{ 
+    display:block;
+    padding: 2rem;
+    color: var(--primary-color);
+    position:relative;
+
+}
+.menu ul li a::after { 
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left:50%;
+    width:0rem;
+    height: 0.2rem;
+    background: var(--secondary-color);
+    transition: all 300ms ease-in-out;
+
+}
+.menu ul li a:hover::after { 
+    left:0;
+    width:100%;
+}
+.menu h1 {
+    font-size: 2.3rem;
+    color: var(--primary-color);
+    background-color: --;
+}
+
+.menu h1 a {
+    color: inherit;
+}
+
+.menu-spacing {
+    height: 6.5rem;
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+}
+.intro-text-content, 
+.intro-img-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.intro-img-content img {
+    width: 100%;
+    height: auto;
+}
+
+.top3-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    text-align: center;
+}
+.grid-one-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    counter-reset: gridcounter;
+    gap: var(--gap);
+}
+
+.grid h3 {
+    font-size: 3rem;
+    position: relative;
+    left: 7rem;
+    margin-bottom: 2rem;
+}
+.grid h3::before {
+    counter-increment: gridcounter;
+    content: counter(gridcounter);
+    position:absolute;
+    font-size:7rem;
+    font-style: italic;
+    top:-2rem;
+    left:-6.5rem;
+    transform: rotate(5deg);
+}
+p.grid-description {
+    padding-bottom: 7rem;
+}
+
+.gallery-img {
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+}
+.gallery-img  img {
+    height: 100%;
+    width: 100%;
+    transition: all 300ms ease-in-out;
+}
+.gallery-img img:hover {
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+    
+}
+
+.responsive-table {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.contact-form {
+    grid-column: span 2;
+
+}
+
+.contact-form .form-grid {
+    border: none;
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--gap);
+}
+.contact-form fieldset {
+    border:  none;
+}
+.form-group {
+    flex: 1 1 32rem;
+}
+.form-group label {
+    display:block;
+    margin-bottom: 1rem;
+}
+.form-group input,
+.form-group textarea {
+    border: none;
+    background: var(--white-color);
+    padding:1.5rem 2rem;
+    width: 100%;
+    font-size: 3rem;
+    outline: none;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 10px 2px var(--secondary-color);
+}
+
+.form-group button {
+    border: 0.5rem solid var(--white-color);
+    background: none;
+    padding: 1.5rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all  300ms ease-in-out;
+    color: var(--white-color);
+}                   
+.form-group button:hover {                                                                                                                                  
+    background-color: var(--white-color);
+    color: var(--primary-color)
+}
+    .full-width {
+    width: 100%;
+    flex-grow: 1 1 100%;
+}
+.form-group ::placeholder {
+    color: var(--light-gray-color)
+}
+.form-grid legend {
+    font-size: 1.6rem;
+    font-style: italic;
+    margin-bottom: 3rem;
+}
+
+.footer {
+    text-align: center;
+}
+.footer a {
+    color: #333;
+}
+.footer p {
+    margin: 0;
+    padding: 3rem;
+}
+.footer a .heart {
+    color: var(--secondary-color);
+}
+.close-menu {
+    display: none;
+}
+.back-to-top {
+    position: fixed;
+    bottom:2rem;
+    right: 2rem;
+    background: var(--white-color);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:var(--primary-color);
+    transform: rotate(-90deg);
+    border:0.1rem solid var(--primary-color);
+
+}
+@media (max-width:800px) {
+    .intro-content, .grid {
+        grid-template-columns: 1fr;
+    }
+    .gallery-img {
+        width: 100%;
+        max-width: 100%;
+        max-height: auto;
+    }
+    .gallery-img  img {
+        width: 100%;
+        
+    }
+
+    .menu {
+        border-bottom: 0.1rem solid var(--light-gray-color);
+        position: fixed;
+        top: 0;
+        left:0;
+        right:0;
+        width:100%;
+        bottom:0;
+    }
+    .menu-content, .menu-content ul { 
+        flex-direction: column;
+        justify-content: center;
+    }
+    .menu-content {
+        height: 100vh;
+    }
+
+    .menu {
+        display: none;
+    }
+    
+    .close-menu {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+    }
+    .close-menu-label::after {
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background: var(--primary-color);
+        color: var(--white-color);
+        font-size: 3rem;
+        height: 3rem;
+        width:3rem;
+        text-align: center;
+        line-height: 3rem;
+        padding:.5rem;
+        cursor: pointer;
+        transition: all 300ms ease-in-out;
+    }
+    /* × */
+    
+    .close-menu:checked~.close-menu-label::after {
+        content: '×';
+    }
+    .close-menu:checked~.menu {
+        display: block;
+    }
+    .menu-spacing  {
+        height: 0px;
+        margin-top:-2px;
+    }
+}
